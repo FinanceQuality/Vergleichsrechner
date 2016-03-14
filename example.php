@@ -13,7 +13,7 @@ $config = array(
 	/*
 	 * Insert the path to your xml file here!
 	 */
-	'xml' => 'http://sf2fqrechner.local/app_dev.php/xml/de/girokonto/1873836242aa269dd90bd24ccc4e4db9/',
+	'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_TYPE/YOUR_HASH/',
 	'user' => 'your username',
 	'pass' => 'your password'
 );
@@ -34,7 +34,7 @@ $config = array(
 	 * You may add your preferred filters as parameters to your url string.
 	 * Check out the filter documentation in your calculator backend for more information!
 	 */
-	'xml' => 'http://sf2fqrechner.local/app_dev.php/xml/de/girokonto/1873836242aa269dd90bd24ccc4e4db9/?account_fee=on',
+	'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_TYPE/YOUR_HASH/?account_fee=on',
 	'user' => 'your username',
 	'pass' => 'your password'
 );
