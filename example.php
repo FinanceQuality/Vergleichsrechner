@@ -1,5 +1,5 @@
 <?php
-require_once('FQVergleiche.php');
+require_once('lib/FQVergleiche.php');
 
 
 
