@@ -35,4 +35,4 @@ foreach ($xml->matrix->products->product as $product)
 ```
 
 ## Questions?
-Feel free to contact jennifer@magyar.netzeffekt.de
+Feel free to contact jennifer.magyar@netzeffekt.de
