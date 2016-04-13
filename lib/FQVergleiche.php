@@ -9,6 +9,11 @@ class FQVergleiche
 	private $config = array();
 
 	/**
+	 * @var array
+	 */
+	private $productList = array();
+
+	/**
 	 * FQVergleiche constructor.
 	 * @param array $config
 	 * @throws \Exception
@@ -16,7 +21,7 @@ class FQVergleiche
 	public function __construct(array $config)
 	{
 		try {
-			if (empty($config['xml']))
+			if (empty($config['xml']) || !isset($config['user']) || !isset($config['pass']))
 			{
 				throw new \Exception('Please make sure to add the url path to your XML file. Structure: array("xml" => "YOUR XML PATH", "user" => "YOUR USERNAME", "pass" => "YOUR PASSWORD")');
 			};
@@ -64,8 +69,51 @@ class FQVergleiche
 			 */
 			foreach ($xml->matrix->products->product as $product)
 			{
+				$calculatorType = (string)$xml->type;
+				$currentProduct = array();
+
+				// ---------------------------------------------------------
 				// At this point, $product contains an single product entry!
 				// Check out the XML matrix for the field documentation.
+				// ---------------------------------------------------------
+
+				// Feel free to extend the code in this area for your needs.
+
+				$currentProduct['merchant'] = (string)$product->merchant_name;
+				$currentProduct['merchant_logo'] = (string)$product->merchant_logo;
+				$currentProduct['tracking_link'] = (string)$product->tracking_link;
+
+				switch($calculatorType)
+				{
+
+					// This case handles girokonto calculator specific data
+					case 'Girokonto':
+						$currentProduct['account_fee'] = number_format((float)$product->scale->option[0]->account_fee, 2, ',', '.');
+						$currentProduct['dispo_interest'] = number_format((float)$product->dispo_interest, 2, ',', '.');
+						$currentProduct['rating'] = (float)$product->rating->rating_sum;
+						$currentProduct['advantage1'] = (string)$product->advantage1;
+						$currentProduct['advantage2'] = (string)$product->advantage2;
+						$currentProduct['advantage3'] = (string)$product->advantage3;
+						break;
+
+
+					// This case handles tagesgeld or festgeld calculator specific data
+					case 'Tagesgeld':
+					case 'Festgeld':
+						$currentProduct['advantage1'] = (string)$product->advantage1;
+						$currentProduct['advantage2'] = (string)$product->advantage2;
+						$currentProduct['advantage3'] = (string)$product->advantage3;
+						$currentProduct['detail1'] = (string)$product->detail1;
+						$currentProduct['detail2'] = (string)$product->detail2;
+						$currentProduct['detail3'] = (string)$product->detail3;
+						$currentProduct['interest'] = number_format((float)$product->interest_scale->option[0]->interest, 2, ',', '.');;
+						break;
+				}
+
+
+				// ---------------------------------------------------------
+				// do not remove the code beyond this line!
+				$this->addProduct($currentProduct);
 			}
 		}
 		catch (\Exception $e)
@@ -140,6 +188,29 @@ class FQVergleiche
 	private function displayError($message)
 	{
 		echo sprintf('<b>Error:</b> %s', $message);
-		exit;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getProductList()
+	{
+		return $this->productList;
+	}
+
+	/**
+	 * @param array $productList
+	 */
+	public function setProductList($productList)
+	{
+		$this->productList = $productList;
+	}
+
+	/**
+	 * @param array $product
+	 */
+	public function addProduct(array $product)
+	{
+		$this->productList[] = $product;
 	}
 }

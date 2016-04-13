@@ -2,9 +2,6 @@
 require_once('lib/FQVergleiche.php');
 
 
-
-
-
 /**
  * First example: Basic request
  */
@@ -21,8 +18,8 @@ $config = array(
 $fq = new FQVergleiche($config);
 $fq->run();
 
-
-
+// receive your product list for the web view
+$productList = $fq->getProductList();
 
 
 /**
@@ -41,3 +38,14 @@ $config = array(
 
 $fq = new FQVergleiche($config);
 $fq->run();
+
+// receive your product list for the web view
+$productList = $fq->getProductList();
+
+?>
+
+<ul>
+	<li><a href="web/templates/girokonto.php">Template Girokonto</a></li>
+	<li><a href="web/templates/tagesgeld.php">Template Tagesgeld</a></li>
+	<li><a href="web/templates/festgeld.php">Template Festgeld</a></li>
+</ul>

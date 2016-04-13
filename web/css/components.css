@@ -1,0 +1,69 @@
+.padding {
+    padding: 10px;
+}
+
+.star-sprite {
+    background: url("/web/images/rating-sprite.png") repeat-x;
+    height: 19px;
+    overflow: hidden;
+    width: 90px;
+}
+
+.star-sprite-rating {
+    background: url("/web/images/rating-sprite.png") 0 100% repeat-x;
+    float: left;
+    height: 19px;
+    display: block;
+}
+
+.table tr>th.vert-align,
+.table tr>td.vert-align{
+    vertical-align: middle;
+}
+
+.content-head {
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    padding: 5px;
+    font-weight: bold;
+}
+
+.content-head .display-table {
+    height: 50px;
+}
+
+.display-table {
+    display: table;
+}
+
+.display-table > span,
+.display-table > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tabs {
+    /*border-top: 1px solid #ccc;*/
+    background-color: #eee;
+}
+
+.tabs .tab-content {
+    border-top: 1px solid #fff;
+    /*background-color: #fff;*/
+}
+
+.product-element {
+    border-bottom: 5px solid #fff;
+    border-top: 5px solid #ccc;
+}
+
+.product-element .display-table {
+    height: 100px;
+}
+
+.bigger-text {
+    font-size: 140%;
+    font-weight: bold;
+}
