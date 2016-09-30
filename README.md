@@ -13,17 +13,17 @@ Follow the list below:
 
 For comparison calculator: Tagesgeld / Festgeld
 
-| URL Parameter   |      Type      |  Value | Description |
-|-----------------|:--------------:|-------:|------------:|
-| amount          | Integer        | (0-9)+ | It controls the start value from investment amount |
-| duration        | Integer        | (0-9)+ | It controls the start value from investment duration (in Months) |
+| URL Parameter   |      Type      | Value    |                    Description                                   |
+|-----------------|:--------------:|:--------:|:-----------------------------------------------------------------|
+| amount          | Integer        | (0-9)+   | It controls the start value from investment amount               |
+| duration        | Integer        | (0-9)+   | It controls the start value from investment duration (in Months) |
 
 For all comparison calculators
 
-| URL Parameter   |      Type      |  Value | Description |
-|-----------------|:--------------:|-------:|------------:|
-| pid             | Integer        | (0-9)+ | Project Id (it can be also taken from [comparison backend](https://vergleiche.financequality.net/admin/application/backend/services/list)). It will affect Product TrackingLink  |
-| subid           | Integer        | (a-zA-Z0-9\-\_)+ | Subid (it can be also taken from [comparison backend](https://vergleiche.financequality.net/admin/application/backend/services/list)). It will affect Product TrackingLink |
+| URL Parameter   |      Type      | Value             | Description                                                                                                                                                                      |
+|-----------------|:--------------:|:-----------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| pid             | Integer        | (0-9)+            | Project Id (it can be also taken from [comparison backend](https://vergleiche.financequality.net/admin/application/backend/services/list)). It will affect Product TrackingLink  |
+| subid           | Integer        | (a-zA-Z0-9\-\_)+  | Subid (it can be also taken from [comparison backend](https://vergleiche.financequality.net/admin/application/backend/services/list)). It will affect Product TrackingLink       |
 
 ```php
 $config = array(
