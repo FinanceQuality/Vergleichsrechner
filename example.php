@@ -10,7 +10,7 @@ $config = array(
 	/*
 	 * Insert the path to your xml file here!
 	 */
-	'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_TYPE/YOUR_HASH/',
+	'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_ID/',
 	'user' => 'your username',
 	'pass' => 'your password'
 );
@@ -31,7 +31,7 @@ $config = array(
 	 * You may add your preferred filters as parameters to your url string.
 	 * Check out the filter documentation in your calculator backend for more information!
 	 */
-	'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_TYPE/YOUR_HASH/?account_fee=on',
+	'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_ID/?account_fee=on',
 	'user' => 'your username',
 	'pass' => 'your password'
 );

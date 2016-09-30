@@ -12,7 +12,7 @@ $config = array(
  /*
   * Insert the path to your xml file here!
   */
- 'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_TYPE/YOUR_HASH/',
+ 'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_ID/',
  'user' => 'your username',
  'pass' => 'your password'
 );
