@@ -30,7 +30,7 @@ $config = array(
  /*
   * Insert the path to your xml file here!
   */
- 'xml' => 'https://vergleiche.financequality.net/xml/LOCALE/CALCULATOR_ID/?##OPTIONAL_PARAMETERS##',
+ 'xml' => 'https://vergleiche.financequality.net/xml/CALCULATOR_ID/?##OPTIONAL_PARAMETERS##',
  'user' => 'your username',
  'pass' => 'your password'
 );
@@ -39,16 +39,16 @@ $fq = new FQVergleiche($config);
 $fq->run();
 ```
 
-## Acces product data
+## Access product data
 Find the following code snippet and add your own code to access your product data:
 ```php
 /**
- * Your calculators products are reachable in this loop!
+ * Feed products are reachable in this loop!
  */
 foreach ($xml->matrix->products->product as $product)
 {
 	// At this point, $product contains an single product entry!
-	// Check out the XML matrix for the field documentation.
+	// Check out the XML matrix for further documentation.
 }
 ```
 
