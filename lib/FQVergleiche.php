@@ -73,8 +73,8 @@ class FQVergleiche
 				$currentProduct = array();
 
 				// ---------------------------------------------------------
-				// At this point, $product contains an single product entry!
-				// Check out the XML matrix for the field documentation.
+                // At this point, $product contains an single product entry!
+                // Check out the XML matrix for further documentation.
 				// ---------------------------------------------------------
 
 				// Feel free to extend the code in this area for your needs.
